@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { WorkoutService } from '../../app/services/workout.service';
 
 @Component({
   selector: 'workout-details',
@@ -8,8 +8,12 @@ import { NavController } from 'ionic-angular';
 })
 export class WorkoutDetailsPage {
 
-  constructor(public navCtrl: NavController) {
+    public workout: any;
+    public result: any;
 
-  }
+    constructor(public navCtrl: NavController, public params: NavParams, public workoutService: WorkoutService) {
+        this.workout = params.get('workout');
+
+    }
 
 }
