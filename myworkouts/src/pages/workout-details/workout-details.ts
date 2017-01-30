@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { WorkoutService } from '../../app/services/workout.service';
+import { WorkoutsPage } from '../workouts/workouts';
 
 @Component({
   selector: 'workout-details',
@@ -16,4 +17,11 @@ export class WorkoutDetailsPage {
 
     }
 
+    deleteWorkout(workoutId) {
+        this.workoutService.deleteWorkout(workoutId).subscribe(data => {
+            this.result = data;
+        });
+
+        this.navCtrl.push(WorkoutsPage);
+    }
 }
