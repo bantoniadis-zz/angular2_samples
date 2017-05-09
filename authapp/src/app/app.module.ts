@@ -6,8 +6,12 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { routing, appRoutingProviders } from './app.routing';
+import { AUTH_PROVIDERS } from 'angular2-jwt';
+
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
+
+import { Auth } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     routing
   ],
   providers: [ 
-    appRoutingProviders 
+    appRoutingProviders,
+    AUTH_PROVIDERS,
+    Auth
   ],
   bootstrap: [AppComponent]
 })
