@@ -1,3 +1,5 @@
 <h1>
   {{title}}
 </h1>
+<h5 *ngIf="auth.authenticated()">You are logged in</h5>
+<h5 *ngIf="!auth.authenticated()">You not logged in, please click the login link above</h5>
